@@ -35,10 +35,10 @@ public class PessoasController {
     @RequestMapping(value = "/editarPessoas.html/{id}", method = RequestMethod.GET)
     public ModelAndView editarPessoas(@PathVariable int id){
 
-        return new ModelAndView("editarPessoa","pessoasModel", pessoasRepository.consultarPorId(id));
+        return new ModelAndView("editarPessoas","pessoasModel", pessoasRepository.consultarPorId(id));
     }
 
-    @RequestMapping(value = "/excluirPessoas.html/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/excluirPessoas/{id}", method = RequestMethod.DELETE)
     public @ResponseBody void excluirPessoa(@PathVariable int id){
 
         pessoasRepository.excluir(id);

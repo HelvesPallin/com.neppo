@@ -42,7 +42,7 @@ public class PessoasRepository {
 
     public List<PessoasModel> consultarTodos(){
 
-        return manager.createQuery("SELECT pessoasModel FROM PessoasModel ORDER BY pessoasModel.id",
+        return manager.createQuery("SELECT pessoasModel FROM PessoasModel pessoasModel ORDER BY pessoasModel.id",
                 PessoasModel.class).getResultList();
     }
 
