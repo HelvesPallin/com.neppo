@@ -1,23 +1,27 @@
 package com.neppo.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "pessoasTable")
-
 public class PessoasModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "nomePessoas", nullable = false)
+    @NotEmpty
+    @Column(name = "nomePessoas")
     private String nome;
 
-    @Column(name = "nomeLogin", nullable = false)
+    @NotEmpty
+    @Column(name = "nomeLogin")
     private String login;
 
-    @Column(name = "nomeSenha", nullable = false)
+    @NotEmpty
+    @Column(name = "nomeSenha")
     private String senha;
 
     public int getId() {

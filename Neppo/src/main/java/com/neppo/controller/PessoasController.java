@@ -5,6 +5,7 @@ import com.neppo.model.ResultadoModel;
 import com.neppo.repository.PessoasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -57,13 +58,14 @@ public class PessoasController {
         catch (Exception e){
             resultadoModel.setCodigo(0);
             resultadoModel.setMensagem("Erro ao inserir a pessoa: "+e.getMessage());
+
         }
 
         return resultadoModel;
     }
 
     @RequestMapping(value = "/editarPessoas", method = RequestMethod.POST)
-    public @ResponseBody ResultadoModel editarPessoas(@RequestBody PessoasModel pessoasModel){
+    public @ResponseBody ResultadoModel editarPessoas(@RequestBody @Validated PessoasModel pessoasModel){
 
         try{
             pessoasRepository.alterar(pessoasModel);

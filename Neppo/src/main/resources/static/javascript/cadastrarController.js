@@ -22,6 +22,10 @@ cadastrarControllerApp.controller("cadastrarController", function($scope, $windo
 
                 $window.alert(data.mensagem);
 
+                $scope.nome = null;
+                $scope.login = null;
+                $scope.senha = null;
+
             }
             else{
 
@@ -37,6 +41,5 @@ cadastrarControllerApp.controller("cadastrarController", function($scope, $windo
         });
 
     };
-
 
 });

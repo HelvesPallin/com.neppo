@@ -1,0 +1,36 @@
+<html lang="en" ng-app="consultarPessoasControllerApp">
+    <head>
+
+        <meta charset="UTF-8"/>
+        <title>Title</title>
+        <script type="text/javascript" src="../javascript/angular.min.js"></script>
+        <script type="text/javascript" src="../javascript/consultarPessoasController.js"></script>
+
+
+    </head>
+    <body>
+        <table ng-controller="consultarPessoasController" border="2px" data-ng-init="init()">
+            <tr>
+                <th>ID</th>
+                <th>NOME</th>
+                <th>LOGIN</th>
+                <th>SENHA</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="pessoa in pessoas">
+                <td>{{ pessoa.id }}</td>
+                <td>{{ pessoa.nome }}</td>
+                <td>{{ pessoa.login }}</td>
+                <td>{{ pessoa.senha }}</td>
+                <td><input type="button" value="Excluir" ng-click="excluirPessoas(pessoa.id)"/></td>
+                <td><input type="button" value="Editar"/></td>
+            </tr>
+        </table>
+
+        <br/><br/>
+
+        <a href="../">Voltar</a>
+
+    </body>
+</html>
