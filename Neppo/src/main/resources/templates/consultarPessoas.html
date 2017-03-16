@@ -24,7 +24,7 @@
                 <td>{{ pessoa.login }}</td>
                 <td>{{ pessoa.senha }}</td>
                 <td><input type="button" value="Excluir" ng-click="excluirPessoas(pessoa.id)"/></td>
-                <td><input type="button" value="Editar"/></td>
+                <td><a ng-href="editarPessoas.html/{{ pessoa.id }}">Editar</a></td>
             </tr>
         </table>
 

@@ -28,7 +28,6 @@ public class PessoasRepository {
         manager.merge(pessoasModel);
     }
 
-    @Transactional
     public PessoasModel consultarPorId(int id){
 
         return manager.find(PessoasModel.class, id);

@@ -5,7 +5,6 @@ import com.neppo.model.ResultadoModel;
 import com.neppo.repository.PessoasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -36,7 +35,9 @@ public class PessoasController {
     @RequestMapping(value = "/editarPessoas.html/{id}", method = RequestMethod.GET)
     public ModelAndView editarPessoas(@PathVariable int id){
 
-        return new ModelAndView("editarPessoas","pessoasModel", pessoasRepository.consultarPorId(id));
+        PessoasModel pessoasModel = pessoasRepository.consultarPorId(id);
+
+        return new ModelAndView("editarPessoas","pessoasModel", pessoasModel);
     }
 
     @RequestMapping(value = "/excluirPessoas/{id}", method = RequestMethod.DELETE)
@@ -65,7 +66,7 @@ public class PessoasController {
     }
 
     @RequestMapping(value = "/editarPessoas", method = RequestMethod.POST)
-    public @ResponseBody ResultadoModel editarPessoas(@RequestBody @Validated PessoasModel pessoasModel){
+    public @ResponseBody ResultadoModel editarPessoas(@RequestBody PessoasModel pessoasModel){
 
         try{
             pessoasRepository.alterar(pessoasModel);

@@ -42,4 +42,9 @@ consultarPessoasControllerApp.controller("consultarPessoasController", function(
         }
 
     }
+
+    $scope.editarPessoas = function(id){
+
+        $window.location.href = "editarPessoas.html/" + id;
+    }
 });

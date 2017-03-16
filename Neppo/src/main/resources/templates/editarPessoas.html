@@ -1,0 +1,41 @@
+<html lang="en" ng-app="editarPessoasControllerApp">
+<head>
+
+    <meta charset="UTF-8"/>
+    <title>CadastroDePessoas</title>
+    <script type="text/javascript" src="../../javascript/angular.min.js"></script>
+    <script type="text/javascript" src="../../javascript/editarPessoasController.js"></script>
+
+</head>
+<body>
+
+<form ng-controller="editarPessoasController">
+    <label>Id: </label>
+    <input type="text" disabled="true" ng-model="id" ng-init="id='6'"/>
+
+    <br/><br/>
+
+    <label>Nome: </label>
+    <input type="text" ng-model="nome" ng-init="nome='${pessoasModel.nome}'"/>
+
+    <br/><br/>
+
+    <label>Login: </label>
+    <input type="text" ng-model="login" ng-init="login='${pessoasModel.login}'"/>
+
+    <br/><br/>
+
+    <label>Senha: </label>
+    <input type="password" ng-model="senha" ng-init="senha='${pessoasModel.senha}'"/>
+
+    <br/><br/>
+
+    <input type="button" value="Editar" ng-click="editarPessoas()"/>
+
+    <br/><br/>
+
+    <a href="../consultarPessoas.html">Voltar</a>
+
+</form>
+</body>
+</html>
