@@ -1,11 +1,32 @@
 var editarPessoasControllerApp = angular.module("editarPessoasControllerApp", []);
 
-editarPessoasControllerApp.controller("editarPessoasController", function($scope, $http, $window){
+editarPessoasControllerApp.controller("editarPessoasController", function($scope, $http, $window, $location){
 
     $scope.id = null;
     $scope.nome = null;
     $scope.login = null;
     $scope.senha = null;
+
+    var url = $location.absUrl();
+    var urlNumber = url.substring(49);
+
+    $scope.init = function(){
+        var resultado = $http.get("../consultarPorId/"+urlNumber);
+
+        resultado.success(function(data, status, headers, config){
+
+            $scope.id = data.id;
+            $scope.nome = data.nome;
+            $scope.login = data.login;
+            $scope.senha = data.senha;
+
+        });
+        resultado.error(function(data, status, headers, config){
+
+            $window.alert(data);
+
+        });
+    }
 
     $scope.editarPessoas = function(){
 
@@ -20,7 +41,7 @@ editarPessoasControllerApp.controller("editarPessoasController", function($scope
 
         resultadoModel.success(function(data, status, headers, config){
 
-            if(data == 1){
+            if(data.codigo == 1){
 
                 $window.alert(data.mensagem);
                 $window.location.href = "../consultarPessoas.html";

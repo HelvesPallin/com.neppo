@@ -83,6 +83,12 @@ public class PessoasController {
         return resultadoModel;
     }
 
+    @RequestMapping(value = "/consultarPorId/{id}", method = RequestMethod.GET)
+    public @ResponseBody PessoasModel consultarPorId(@PathVariable int id){
+
+        return pessoasRepository.consultarPorId(id);
+    }
+
     @RequestMapping(value = "/consultarTodos", method = RequestMethod.GET)
     public @ResponseBody List<PessoasModel> consultarTodos(){
 

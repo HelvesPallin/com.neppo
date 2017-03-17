@@ -7,35 +7,35 @@
     <script type="text/javascript" src="../../javascript/editarPessoasController.js"></script>
 
 </head>
-<body>
+    <body>
 
-<form ng-controller="editarPessoasController">
-    <label>Id: </label>
-    <input type="text" disabled="true" ng-model="id" ng-init="id='6'"/>
+        <form ng-controller="editarPessoasController" data-ng-init="init()">
+            <label>Id: </label>
+            <input type="text" disabled="true" ng-model="id"/>
 
-    <br/><br/>
+            <br/><br/>
 
-    <label>Nome: </label>
-    <input type="text" ng-model="nome" ng-init="nome='${pessoasModel.nome}'"/>
+            <label>Nome: </label>
+            <input type="text" ng-model="nome"/>
 
-    <br/><br/>
+            <br/><br/>
 
-    <label>Login: </label>
-    <input type="text" ng-model="login" ng-init="login='${pessoasModel.login}'"/>
+            <label>Login: </label>
+            <input type="text" ng-model="login"/>
 
-    <br/><br/>
+            <br/><br/>
 
-    <label>Senha: </label>
-    <input type="password" ng-model="senha" ng-init="senha='${pessoasModel.senha}'"/>
+            <label>Senha: </label>
+            <input type="password" ng-model="senha"/>
 
-    <br/><br/>
+            <br/><br/>
 
-    <input type="button" value="Editar" ng-click="editarPessoas()"/>
+            <input type="button" value="Editar" ng-click="editarPessoas()"/>
 
-    <br/><br/>
+            <br/><br/>
 
-    <a href="../consultarPessoas.html">Voltar</a>
+            <a href="../consultarPessoas.html">Voltar</a>
 
-</form>
-</body>
+        </form>
+    </body>
 </html>

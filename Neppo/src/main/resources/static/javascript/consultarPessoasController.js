@@ -9,7 +9,6 @@ consultarPessoasControllerApp.controller("consultarPessoasController", function(
         var resultado = $http.get("consultarTodos");
 
         resultado.success(function(data, status, headers, config){
-            console.log(data);
 
             $scope.pessoas = data;
 
